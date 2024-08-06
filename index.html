@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials Carousel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="testimonial-bg">
+    <!-- Heading Section -->
+    <section class="header-section">
+        <h1 class="header-content">What User says</h1>
+        <p class="header-content-para text-center mt-4">Testimonials that speak louder than word! Customer that light up our day.</p>
+        <div class="my-lg-5 py-lg-5">
+            <div class="screenshot_slider owl-carousel owl-theme">
+                <div class="item">
+                    <div class="testimonial-card text-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="./assets/testimonial-person-1.png" alt="" class="img-fluid"> 
+                        </div>
+                        <p class="testimonial-card-name poppins-medium pt-lg-4 pt-2">Jacob Jones</p>
+                        <p class="card-description poppins-regular pt-lg-3">As a budding startup, we sought a financial solution that was simple, secure and scalable. Swift Revel checked all the boxes, enabling focus on growth.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-card text-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="./assets/person-2.png" alt="" class="img-fluid"> 
+                        </div>                        
+                        <p class="testimonial-card-name poppins-medium pt-lg-4 pt-2">Marvin McKinney</p>
+                        <p class="card-description poppins-regular pt-lg-3 pt-1">Since switching to Swift Revel, I finally have peace of mind regarding my business finances. With their secure platform, I trust my data's protection completely.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-card text-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="./assets/testimonial-person-3.png" alt="" class="img-fluid"> 
+                        </div>                        
+                        <p class="testimonial-card-name poppins-medium pt-lg-4 pt-2">Theresa Webb</p>
+                        <p class="card-description poppins-regular pt-lg-3 pt-1">Swift Revel empowers me to manage my business finances with confidence and ease. Their integrated tax solutions ensure I'm always tax compliant.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-card text-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="./assets/testimonial-person-1.png" alt="" class="img-fluid"> 
+                        </div>                        
+                        <p class="testimonial-card-name poppins-medium pt-lg-4 pt-2">Jacob Jones</p>
+                        <p class="card-description poppins-regular pt-lg-3 pt-1">Swift Revel empowers me to manage my business finances with confidence and ease. Their integrated tax solutions ensure I'm always tax compliant.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-card text-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="./assets/person-2.png" alt="" class="img-fluid"> 
+                        </div>                        
+                        <p class="testimonial-card-name poppins-medium pt-lg-4 pt-2">Marvin McKinney</p>
+                        <p class="card-description poppins-regular pt-lg-3 pt-1">Swift Revel empowers me to manage my business finances with confidence and ease. Their integrated tax solutions ensure I'm always tax compliant.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-card text-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="./assets/testimonial-person-3.png" alt="" class="img-fluid"> 
+                        </div>                        
+                        <p class="testimonial-card-name poppins-medium pt-lg-4 pt-2">Theresa Webb</p>
+                        <p class="card-description poppins-regular pt-lg-3 pt-1">Swift Revel empowers me to manage my business finances with confidence and ease. Their integrated tax solutions ensure I'm always tax compliant.</p>
+                    </div>
+                </div>
+                <!-- Repeat more items as needed -->
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        var owl = $('.screenshot_slider').owlCarousel({
+           
+            loop: true,
+            responsiveClass: true,
+            margin: 40,
+            smartSpeed: 2000,
+            center: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    stagePadding: 0,
+                },
+                600: {
+                    items: 1
+                },
+                1200: {
+                    items: 3
+                }
+            }
+        });
+
+        owl.on('mouseover', function() {
+            owl.trigger('stop.owl.autoplay');
+            $('.owl-stage').addClass('paused-animation');
+        });
+
+        owl.on('mouseleave', function() {
+            owl.trigger('play.owl.autoplay');
+            $('.owl-stage').removeClass('paused-animation');
+        });
+
+        jQuery(document.documentElement).keydown(function (event) {    
+            if (event.keyCode == 37) {
+                owl.trigger('prev.owl.carousel', [400]);
+            } else if (event.keyCode == 39) {
+                owl.trigger('next.owl.carousel', [400]);
+            }
+        });
+    </script>
+</body>
+</html>
